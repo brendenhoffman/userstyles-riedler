@@ -118,4 +118,7 @@
 	#app .close-button:hover>.cross-first-line,
 	#app .close-button:hover>.cross-second-line{
 		background-color:/*[[hhtxt]]*/;}
+	html[data-theme="light"] input[type="radio"]{
+		background-color:#0000;
+	}
 }
