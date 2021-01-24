@@ -1,0 +1,530 @@
+/* ==UserStyle==
+@name			Wikipedia Darkest Day
+@namespace		https://github.com/RiedleroD/userstyles-riedler/
+@version		0.1.0
+@description	Dark mode for Wikipedia
+@author			Riedler
+@preprocessor	stylus
+@var	select	thm		"Theme"				{"Dark":"dark","Custom":"custom","Light":"light"}
+@var	checkbox	il	"Invert Logo"		1
+@var	text	logo	"Logo"				"url(/static/images/project-logos/enwiki20a.png)"
+@var	color	bg00	"Background 0"		#000
+@var	color	bg01	"Background 1"		#0e0e0e
+@var	color	bg02	"Background 2"		#111
+@var	color	bg03	"Background 3"		#0a0c0e
+@var	color	bg04	"Background 4"		#0a050f
+@var	color	bg05	"Background 5"		#141414
+@var	color	bg06	"Background 6"		#08090a
+@var	color	bg07	"Background 7"		#191919
+@var	color	bg08	"Background 8"		#181818
+@var	color	bg09	"Background 9"		#050a11
+@var	color	bg10	"Background 10"		#182228
+@var	color	bg11	"Background 11"		#1d1d1d
+@var	color	bg12	"Background 12"		#252512
+@var	color	bg13	"Background 13"		#0a0b12
+@var	color	bg14	"Background 14"		#181822
+@var	color	bg15	"Background 15"		#12161e
+@var	color	bg16	"Background 16"		#243
+@var	color	bg17	"Background 17"		#203040
+@var	color	bg18	"Background 18"		#112
+@var	color	bg19	"Background 19"		#465
+@var	color	bg20	"Background 20"		#456
+@var	color	bg21	"Background 21"		#555
+@var	color	tx0		"Text 0"			#EEE
+@var	color	tx1		"Text 1"			#CCC
+@var	color	tx2		"Text 2"			#BABABA
+@var	color	tx3		"Text 3"			#AAA
+@var	color	tx4		"Text 4"			#999
+@var	color	tx5		"Text 5"			#888
+@var	color	brd0	"Border 0"			#405344
+@var	color	brd1	"Border 1"			#44494d
+@var	color	brd2	"Border 2"			#212e39
+@var	color	brd3	"Border 3"			#665782
+@var	color	brd4	"Border 4"			#666
+@var	color	brd5	"Border 5"			#222
+@var	color	cl0		"Color 0"			#345
+@var	color	cl1		"Color 1"			#114163
+@var	color	cl2		"Color 2"			#25a
+@var	color	lnk		"Link"				#26C
+@var	color	lnkv	"Visited Link"		#66C
+@var	color	lnkev	"Ext. Visited Link"	#86C
+@var	color	lnka	"Active Link"		#FC2
+@var	color	lnkea	"Ext. Active Link"	#F90
+@var	color	yes		"True/Yes/Correct"	#484
+@var	color	ovc		"Generic Overlay"	#555
+==/UserStyle== */
+
+@-moz-document domain("wikipedia.org")
+	if thm==light
+		bg00=#fff
+		bg01=#fdfdfd
+		bg02=#fbfbfb
+		bg03=#fafcfe
+		bg04=#faf5ff
+		bg05=#f9f9f9
+		bg06=#f8f9fa
+		bg07=#f7f7f7
+		bg08=#f6f6f6
+		bg09=#f5faff
+		bg10=#e8f2f8
+		bg11=#eee
+		bg12=#ebebd2
+		bg13=#eaecf0
+		bg14=#ddf
+		bg15=#d1dbdf
+		bg16=#cef2e0
+		bg17=#cedff2
+		bg18=#ccf
+		bg19=#a3bfb1
+		bg20=#a3b0bf
+		bg21=#aaa
+		tx0=#000
+		tx1=#202122
+		tx2=#222
+		tx3=#404244
+		tx4=#54595d
+		tx5=#72777d
+		brd0=#a2a9b1
+		brd1=#afa3bf
+		brd2=#c8ccd1
+		brd3=#ddcef2
+		brd4=#ddd
+		brd5=#e2e2e2
+		cl0=#a7d7f9
+		cl1=#77c1f6
+		cl2=#36c
+		lnk=#0645ad
+		lnkv=#0b0080
+		lnkev=#636
+		lnka=#faa700
+		lnkea=#b63
+		yes=#99FF99
+		ovc=#000
+	else if thm==dark
+		bg00=#000
+		bg01=#0e0e0e
+		bg02=#111
+		bg03=#0a0c0e
+		bg04=#0a050f
+		bg05=#141414
+		bg06=#08090a
+		bg07=#191919
+		bg08=#181818
+		bg09=#050a11
+		bg10=#182228
+		bg11=#1d1d1d
+		bg12=#252512
+		bg13=#0a0b12
+		bg14=#181822
+		bg15=#12161e
+		bg16=#243
+		bg17=#203040
+		bg18=#112
+		bg19=#465
+		bg20=#456
+		bg21=#555
+		tx0=#EEE
+		tx1=#CCC
+		tx2=#BABABA
+		tx3=#AAA
+		tx4=#999
+		tx5=#888
+		brd0=#405344
+		brd1=#44494d
+		brd2=#212e39
+		brd3=#665782
+		brd4=#666
+		brd5=#222
+		cl0=#345
+		cl1=#114163
+		cl2=#25a
+		lnk=#26C
+		lnkv=#66C
+		lnkev=#86C
+		lnka=#FC2
+		lnkea=#F90
+		yes=#484
+		ovc=#555
+	if il
+		il=invert(1)
+	else
+		il=none
+	.mediawiki{
+		.mw-wiki-logo{
+			filter:il;
+			background-image:logo;
+		}
+		background-color:bg08;
+		color:tx0;
+		& :focus{
+			outline-color:cl2;
+		}
+		& #mw-page-base{
+			background-color:bg00;
+			background-image:linear-gradient(to bottom,bg00 50%,bg08 100%)
+		}
+		& .vector-menu-tabs{
+			&,
+			& a,
+			#mw-head .vector-menu-dropdown h3{
+				background-image:linear-gradient(to bottom,rgba(cl0,0) 0,cl0 100%);
+			}
+			& .selected{
+				background-color:bg00;
+				background-image:none;
+				& a,
+				& a:visited{
+					color:tx1;
+				}
+			}
+			& li{
+				background-image:linear-gradient(to top,cl1 0,bg10 1px,bg00 100%);
+				& a{
+					color:lnk;
+				}
+			}
+		}
+		& .vector-menu-portal{
+			& h3{
+				color:tx4;
+				background-image:linear-gradient(to right,rgba(brd2,0) 0,brd2 33%,brd2 66%,rgba(brd2,0) 100%);
+			}
+			& .body li a,
+			& .vector-menu-content li a{
+				color:lnk;
+				&:visited{
+					color:lnkv;
+				}
+			}
+		}
+		& .mw-body,
+		& .parsoid-body{
+			background-color:bg00;
+			color:tx1;
+		}
+		& .mw-{
+			&body{
+				border-color:cl0;
+			}
+			&footer li{
+				color:tx1;
+			}
+			&ui-button{
+				background-color:bg06;
+				color:tx1;
+				border-color:brd0;
+				&:hover{
+					background-color:bg00;
+					color:tx3;
+				}
+			}
+			&mmv-{
+				&post-image{
+					background-color:bg00;
+					color:tx1;
+				}
+				&image-metadata{
+					background-color:bg06;
+					border-color:brd2;
+				}
+				&credit{
+					color:tx4;
+				}
+				&dialog{
+					background-color:bg00;
+					box-shadow:0 2px 2px 0 bg21;
+					& .mw-mmv-dialog-down-arrow{
+						background-color:bg00;
+					}
+				}
+				&overlay{
+					background-color:ovc;
+				}
+			}
+		}
+		& .mwe-popups{
+			background-color:bg00;
+			box-shadow:0 30px 90px -20px rgba(ovc,0.3),0 0 1px 1px rgba(ovc,0.05);
+			& ^[1..-1]{
+				&-container{
+					background-color:bg00;
+					color:tx1;
+				}
+				&-thumbnail{
+					outline-color:rgba(ovc,0.1);
+				}
+				&-extract{
+					color:tx1;
+					&[dir="ltr"]::after{
+						background-image:linear-gradient(to right,rgba(bg00,0),bg00 50%);
+					}
+					&[dir="rtl"]::after{
+						background-image:linear-gradient(to left,rgba(bg00,0),bg00 50%);
+					}
+				}
+			}
+		}
+		& .rt-tooltip{
+			background-color:bg00;
+			color:tx2;
+			border-color:brd2;
+			&Tail{
+				background-image:linear-gradient(to top right,brd2 50%,#0000 50%);
+				&::after{
+					background-color:bg00;
+				}
+			}
+		}
+		& #contentSub,
+		& #contentSub2{
+			color:tx4;
+		}
+		& a{
+			color:lnk;
+			&:active{
+				color:lnka;
+			}
+			&:visited{
+				color:lnkv;
+			}
+		}
+		& .mw-parser-output{
+			& #mp-{
+				&left .mp-h2{
+					background-color:bg16;
+					border-color:bg19;
+				}
+				&right{
+					background-color:bg09;
+					border-color:bg17;
+					& .mp-h2{
+						background-color:bg17;
+						border-color:bg20;
+					}
+				}
+				&lower{
+					background-color:bg04;
+					border-color:brd3;
+				}
+				&tfp-h2{
+					background-color:brd3;
+					border-color:brd1;
+				}
+				&other-lower{
+					border-color:brd5;
+					& .mp-h2{
+						background-color:bg11;
+						border-color:brd4;
+						color:tx2;
+					}
+				}
+			}
+			& #mp-topbanner,
+			& .mp-h2,
+			& #mp-left{
+				border-color:brd4;
+				background-color:bg05;
+				color:tx0;
+			}
+			& .itn-special{
+				background-color:bg03;
+				border-color:bg20;
+			}
+			& .video-game-reviews{
+				& table{
+					border-color:brd0;
+				}
+				& caption{
+					background-color:bg15;
+				}
+				& th,
+				& td,
+				& caption{
+					border-color:brd0;
+				}
+			}
+			& .vgr-hrow th{
+				background-color:bg10;
+			}
+			& a.extiw,
+			& a.external{
+				color:cl2;
+				&:active{
+					color:lnkea;
+				}
+				&:visited{
+					color:lnkev;
+				}
+			}
+			& .wikipedia-languages-prettybars{
+				background-color:brd2;
+			}
+		}
+		& .client-js .sortable:not(.jquery-tablesorter)>*>tr:first-child>th:not(.unsortable),
+		& .jquery-tablesorter th.headerSort{
+			background-color:bg13;
+			background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+			background-size:0.75em;
+		}
+		& #pt-anonuserpage{
+			color:tx4;
+		}
+		& #searchInput{
+			background-color:rgba(bg00,0.5);
+			color:tx0;
+			border-color:brd0;
+		}
+		&,
+		& #simpleSearch:hover{
+			& #searchInput:focus{
+				border-color:cl2;
+				box-shadow:inset 0 0 0 1px cl2,inset 0 0 0 2px bg00;
+			}
+		}
+		& .suggestions{
+			& ^[1..-1]-results{
+				background-color:bg00;
+				border-color:brd0;
+			}
+			& a.mw-searchSuggest-link{
+				&,
+				&:hover,
+				&:active,
+				&:focus,
+				& .suggestions-result{
+					color:tx0;
+				}
+			}
+			& ^[1..-1]-special{
+				background-color:bg00;
+				border-color:brd0;
+				& .special-label{
+					color:tx5;
+				}
+				& .special-query{
+					color:tx0;
+				}
+			}
+		}
+		& .wikitable{
+			background-color:bg06;
+			color:tx1;
+			&>tr,
+			&>*>tr{
+				&>th{
+					background-color:bg13;
+				}
+				&>th,
+				&>td{
+					border-color:brd0;
+				}	
+			}
+			/*STOP USING INLINE FUCKING CSS FFS*/
+			& td[style*="background: #99FF99; color: black;"]{
+				background-color:yes !important;
+				color:tx0 !important;
+			}
+		}
+		& .navbox,
+		& .navbox-subgroup{
+			background-color:bg01;
+		}
+		& .navbox{
+			border-color:brd0;
+			& th,
+			&-title{
+				background-color:bg18;
+			}
+			&-even{
+				background-color:bg07;
+			}
+			&-list{
+				border-color:bg01;
+			}
+		}
+		& .navbox-abovebelow,
+		& th.navbox-group,
+		& .navbox-subgroup .navbox-title{
+			background-color:bg14;
+		}
+		& tr+tr>.navbox-{
+			&abovebelow, 
+			&group,
+			&image,
+			&list{
+				border-color:bg01;
+			}
+		}
+		& .infobox{
+			border-color:brd0;
+			background-color:bg06;
+			color:tx0;
+		}
+		& .toc{
+			&,
+			&colours{
+				border-color:brd0;
+				background-color:bg06;
+			}
+			&number{
+				color:tx1;
+			}
+		}
+		& div.thumbinner{
+			background-color:bg06;
+			border-color:brd2;
+		}
+		& .thumbimage{
+			background-color:bg00;
+			border-color:brd2;
+		}
+		& #content .gallerybox div.thumb{
+			background-color:bg06;
+			border-color:brd2;
+		}
+		& .catlinks{
+			background-color:bg06;
+			border-color:brd0;
+			& li{
+				border-color:brd0;
+			}
+		}
+		& .wb-langlinks-link>a{/*I hate wikipedia for !important this*/
+			&::before{
+				opacity:1;
+			}
+			&:link,
+			&:visited{
+				color:tx4 !important;
+			}
+			&:hover{
+				color:lnk !important;
+			}
+		}
+		& th[style*="background:rgb(235\,235\,210)"]{
+			background-color:bg12 !important;/*sadly no other option*/
+		}
+		& table[style="background-color:#f9f9f9;border:1px solid #aaa;color:#000"]{/*fuck this shit*/
+			background-color:bg05 !important;/*stop using inline style ffs*/
+			border-color:bg21 !important;
+			color:tx0 !important;
+		}
+		& ul{
+			list-style-image:none;
+			& li::marker{
+				color:tx1;
+			}
+		}
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6{
+			color:tx0;
+		}
+		& h1,
+		& h2{
+			border-bottom-color:brd0;
+		}
+	}
