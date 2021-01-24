@@ -51,6 +51,7 @@
 @var	color	lnka	"Active Link"		#FC2
 @var	color	lnkea	"Ext. Active Link"	#F90
 @var	color	yes		"True/Yes/Correct"	#484
+@var	color	amber	"Amber Color"		#b36300
 @var	color	ovc		"Generic Overlay"	#555
 ==/UserStyle== */
 
@@ -98,6 +99,9 @@ if thm==light
 	lnka=#faa700
 	lnkea=#b63
 	yes=#99FF99
+	amber=#f28500
+	yl0=#c0c090
+	yl1=#f8eaba
 	ovc=#000
 else if thm==dark
 	bg00=#000
@@ -128,7 +132,7 @@ else if thm==dark
 	tx3=#AAA
 	tx4=#999
 	tx5=#888
-	brd0=#405344
+	brd0=#404453
 	brd1=#44494d
 	brd2=#212e39
 	brd3=#665782
@@ -143,6 +147,9 @@ else if thm==dark
 	lnka=#FC2
 	lnkea=#F90
 	yes=#484
+	amber=#b36300
+	yl0=#505030
+	yl1=#352a0a
 	ovc=#555
 if il
 	il=invert(1)
@@ -201,6 +208,17 @@ else
 		& .parsoid-body{
 			background-color:bg00;
 			color:tx1;
+		}
+		& pre,
+		& .mw-code{
+			color:tx0;
+			background-color:bg06;
+			border-color:bg13;
+		}
+		code{
+			color:tx0;
+			background-color:bg06;
+			border-color:bg13;
 		}
 		& .mw-{
 			&body{
@@ -289,6 +307,12 @@ else
 			}
 		}
 		& .mw-parser-output{
+			.portal{
+				border-color:bg21;
+				&>ul{
+					background-color:bg05;
+				}
+			}
 			& #mp-{
 				&left .mp-h2{
 					background-color:bg16;
@@ -425,6 +449,20 @@ else
 				color:tx0 !important;
 			}
 		}
+		& table{
+			&.ambox-content{
+				border-color:brd0;
+				border-left-color:amber;
+				background-color:bg02;
+			}
+			&.tmbox{
+				background-color:yl1;
+				&-protection, 
+				&-notice{
+					border-color:yl0;
+				}
+			}
+		}
 		& .navbox,
 		& .navbox-subgroup{
 			background-color:bg01;
@@ -499,6 +537,11 @@ else
 			}
 			&:hover{
 				color:lnk !important;
+			}
+		}
+		& .mwe-math-fallback-image-inline{
+			if th==dark{
+				filter:invert(1);
 			}
 		}
 		& th[style*="background:rgb(235\,235\,210)"]{
