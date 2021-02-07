@@ -244,6 +244,14 @@ else
 					color:tx3;
 				}
 			}
+			&ui-input{
+				background-color:bg00;
+				color:tx0;
+				box-shadow:inset 0 0 0 1px bg00;
+				&:hover{
+					border-color:tx5;
+				}
+			}
 			&mmv-{
 				&post-image{
 					background-color:bg00;
@@ -315,6 +323,9 @@ else
 			}
 		}
 		& .mw-parser-output{
+			& .sidebar{
+				background-color:bg06;
+				border-color:bg21;}
 			.portal{
 				border-color:bg21;
 				&>ul{
