@@ -78,6 +78,9 @@ if thm==light
 	bg19=#a3bfb1
 	bg20=#a3b0bf
 	bg21=#aaa
+	bg22=#d8e8ff
+	bg23=#888
+	bg24=#CCC
 	tx0=#000
 	tx1=#202122
 	tx2=#222
@@ -90,6 +93,7 @@ if thm==light
 	brd3=#ddcef2
 	brd4=#ddd
 	brd5=#e2e2e2
+	brd6=#8898BF
 	cl0=#a7d7f9
 	cl1=#77c1f6
 	cl2=#36c
@@ -126,6 +130,9 @@ else if thm==dark
 	bg19=#465
 	bg20=#456
 	bg21=#555
+	bg22=#38485f
+	bg23=#888
+	bg24=#151515
 	tx0=#EEE
 	tx1=#CCC
 	tx2=#BABABA
@@ -138,6 +145,7 @@ else if thm==dark
 	brd3=#665782
 	brd4=#666
 	brd5=#222
+	brd6=#55759d
 	cl0=#345
 	cl1=#114163
 	cl2=#25a
@@ -383,6 +391,20 @@ else
 			& .wikipedia-languages-prettybars{
 				background-color:brd2;
 			}
+			/*german wiki*/
+			& .hauptseite-{
+				&box-title{
+					background-color:bg22;
+				}
+				&box-title,
+				&box-content{
+					border-color:brd6;
+				}
+				&box-content,
+				&preview-wikidata{
+					background-color:bg00;
+				}
+			}
 		}
 		& .client-js .sortable:not(.jquery-tablesorter)>*>tr:first-child>th:not(.unsortable),
 		& .jquery-tablesorter th.headerSort{
@@ -463,6 +485,17 @@ else
 				}
 			}
 		}
+		/*german wikipedia*/
+		table>*>tr.hintergrundfarbe1>th,
+		table>*>tr>th.hintergrundfarbe1,
+		table.hintergrundfarbe1,
+		.hintergrundfarbe1{
+			background-color:bg06;
+		}
+		& .rahmenfarbe1{
+			border-color:brd0;
+		}
+		/*normal wiki again*/
 		& .navbox,
 		& .navbox-subgroup{
 			background-color:bg01;
@@ -547,10 +580,30 @@ else
 		& th[style*="background:rgb(235\,235\,210)"]{
 			background-color:bg12 !important;/*sadly no other option*/
 		}
+		& th[style*="background:#efefef"]{
+			background-color:bg11 !important;
+		}
+		& td[style*="border-top:#ddd 1px solid"]{
+			border-top-color:bg3;
+		}
 		& table[style="background-color:#f9f9f9;border:1px solid #aaa;color:#000"]{/*fuck this shit*/
 			background-color:bg05 !important;/*stop using inline style ffs*/
 			border-color:bg21 !important;
 			color:tx0 !important;
+		}
+		& [style*="background-color:#ffffff"][style*="border:1px solid #4F4F4F"]{
+			background-color:bg00 !important;/*argh*/
+			border-color:tx3 !important;
+		}
+		& kbd[style*="background: #F7F7F7"][style*="background-image:linear-gradient(rgba(255,255,255,.4)\,rgba(127,127,127,.2))"][style*="border-color:#DDDDDD #AAAAAA #888888 #CCCCCC"][style*="text-shadow:0 1px rgba(255,255,255,.5)"]{
+			background-color:bg07 !important;/*wtf stop…*/
+			if(thm==light){
+				background-image:linear-gradient(rgba(bg00,0.4),rgba(bg23,0.2)) !important;
+			}else{
+				background-image:linear-gradient(rgba(bg23,0.2),rgba(bg00,0.4)) !important;
+			}
+			border-color:brd4 bg21 bg23 bg24 !important;
+			text-shadow:0 1px rgba(bg00,.5) !important;
 		}
 		& ul{
 			list-style-image:none;
