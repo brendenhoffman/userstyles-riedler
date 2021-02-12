@@ -104,6 +104,9 @@ if thm==light
 	cl3=#39d
 	cl4=#74b2e2
 	cl5=#AAF
+	rd1=#f2cedd
+	rd2=#fff5fa
+	rd3=#bfa3af
 	lnk=#0645ad
 	lnkv=#0b0080
 	lnkev=#636
@@ -155,7 +158,7 @@ else if thm==dark
 	brd0=#404453
 	brd1=#44494d
 	brd2=#212e39
-	brd3=#665782
+	brd3=#221e32
 	brd4=#666
 	brd5=#222
 	brd6=#55759d
@@ -165,6 +168,9 @@ else if thm==dark
 	cl3=#136
 	cl4=#123a64
 	cl5=#114
+	rd1=#280818
+	rd2=#11080c
+	rd3=#3f232f
 	lnk=#48F
 	lnkv=#97F
 	lnkev=#97F
@@ -408,6 +414,10 @@ else
 						border-color:bg20;
 					}
 				}
+				&middle{
+					border-color:rd1;
+					background-color:rd2;
+				}
 				&lower{
 					background-color:bg04;
 					border-color:brd3;
@@ -415,6 +425,10 @@ else
 				&tfp-h2{
 					background-color:brd3;
 					border-color:brd1;
+				}
+				&tfl-h2{
+					background-color:rd1;
+					border-color:rd3;
 				}
 				&other-lower{
 					border-color:brd5;
