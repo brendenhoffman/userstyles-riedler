@@ -120,6 +120,7 @@ if thm==light
 	yesg=#9bcd9b
 	yesd=#090
 	amber=#f28500
+	orng=#F93
 	yl0=#c0c090
 	yl1=#f8eaba
 	yl2=#e8dbae
@@ -190,6 +191,7 @@ else if thm==dark
 	yesg=#686
 	yesd=#080
 	amber=#b36300
+	orng=#b70
 	yl0=#505030
 	yl1=#352a0a
 	yl2=#433218
@@ -820,6 +822,9 @@ else
 		}
 		& [style*="background-color: #f9f9f9"]{
 			background-color:bg05 !important;
+		}
+		& [style*="color:#FF9933"]{
+			color:orng !important;
 		}
 		& ul{
 			list-style-image:none;
