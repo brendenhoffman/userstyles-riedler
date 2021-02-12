@@ -106,6 +106,7 @@ if thm==light
 	lnka=#faa700
 	lnkea=#b63
 	yes=#99FF99
+	yesg=#9bcd9b
 	yesd=#090
 	amber=#f28500
 	yl0=#c0c090
@@ -156,12 +157,13 @@ else if thm==dark
 	cl1=#114163
 	cl2=#25a
 	cl3=#136
-	lnk=#26C
-	lnkv=#66C
-	lnkev=#86C
+	lnk=#48F
+	lnkv=#97F
+	lnkev=#97F
 	lnka=#FC2
 	lnkea=#F90
 	yes=#484
+	yesg=#686
 	yesd=#080
 	amber=#b36300
 	yl0=#505030
@@ -455,6 +457,13 @@ else
 			& .wikipedia-languages-prettybars{
 				background-color:brd2;
 			}
+			& table.taxobox{
+				background-color:bg00;
+				border-color:tx5;
+				&>*>*>th{
+					background-color:yesg;
+				}
+			}
 			/*german wiki*/
 			& .hauptseite-{
 				&box-title{
@@ -652,6 +661,9 @@ else
 		}
 		& th[style*="background:#efefef"]{
 			background-color:bg11 !important;
+		}
+		& th[style*="background-color: rgb(180\,250\,180)"]{
+			background-color:yes !important;
 		}
 		& td[style*="border-top:#ddd 1px solid"]{
 			border-top-color:bg3;
