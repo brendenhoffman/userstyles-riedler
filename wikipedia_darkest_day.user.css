@@ -98,15 +98,19 @@ if thm==light
 	brd4=#ddd
 	brd5=#e2e2e2
 	brd6=#8898BF
+	brd7=#bebebe
 	cl0=#a7d7f9
 	cl1=#77c1f6
 	cl2=#36c
 	cl3=#39d
 	cl4=#74b2e2
 	cl5=#AAF
+	cl6=#ADF
 	rd1=#f2cedd
 	rd2=#fff5fa
 	rd3=#bfa3af
+	rd4=#ffdbdb
+	rd5=#bb7070
 	lnk=#0645ad
 	lnkv=#0b0080
 	lnkev=#636
@@ -162,15 +166,19 @@ else if thm==dark
 	brd4=#666
 	brd5=#222
 	brd6=#55759d
+	brd7=#7a7a7a
 	cl0=#345
 	cl1=#114163
 	cl2=#25a
 	cl3=#136
 	cl4=#123a64
 	cl5=#114
+	cl6=#134
 	rd1=#280818
 	rd2=#11080c
 	rd3=#3f232f
+	rd4=#200
+	rd5=#773030
 	lnk=#48F
 	lnkv=#97F
 	lnkev=#97F
@@ -753,6 +761,24 @@ else
 		& [style*="border-color: #009900"][style*="color: #000000"]{
 			border-color:yes !important;
 			color:tx0 !important;
+		}
+		& [style*="border:1px solid #bb7070"][style*="background:#ffdbdb"]{
+			background-color:rd4 !important;
+			border-color:rd5 !important;
+		}
+		& [style*="border: 1px solid #bebebe"][style*="background-color: white"]{
+			border-color:brd7 !important;
+			background-color:bg00 !important;
+		}
+		& [style*="border-bottom: 1px solid #bebebe"],
+		& [style*="border-top: 1px solid #bebebe"]{
+			border-color:brd7 !important;
+		}
+		& [style*="border-top: 1px solid #aaa"]{
+			border-color:bg21 !important;
+		}
+		& [style*="background-color: #adf"]{
+			background-color:cl6 !important;
 		}
 		& ul{
 			list-style-image:none;
