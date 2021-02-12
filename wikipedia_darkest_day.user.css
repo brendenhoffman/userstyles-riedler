@@ -103,6 +103,7 @@ if thm==light
 	cl2=#36c
 	cl3=#39d
 	cl4=#74b2e2
+	cl5=#AAF
 	lnk=#0645ad
 	lnkv=#0b0080
 	lnkev=#636
@@ -163,6 +164,7 @@ else if thm==dark
 	cl2=#25a
 	cl3=#136
 	cl4=#123a64
+	cl5=#114
 	lnk=#48F
 	lnkv=#97F
 	lnkev=#97F
@@ -715,6 +717,10 @@ else
 			background-color:bg05 !important;/*stop using inline style ffs*/
 			border-color:bg21 !important;
 			color:tx0 !important;
+		}
+		& table[style*="background:#F8F9FA"][style*="border:1px solid #AAAAFF"]{
+			background-color:bg06 !important;
+			border-color:cl5 !important;
 		}
 		& [style*="background-color:#ffffff"][style*="border:1px solid #4F4F4F"]{
 			background-color:bg00 !important;/*argh*/
