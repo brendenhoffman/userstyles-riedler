@@ -82,6 +82,7 @@ if thm==light
 	bg23=#888
 	bg24=#CCC
 	bg25=#f0f0f0
+	bg26=#e4f1fb
 	tx0=#000
 	tx1=#202122
 	tx2=#222
@@ -89,6 +90,7 @@ if thm==light
 	tx4=#54595d
 	tx5=#72777d
 	tx6=#333
+	tx7=#555
 	brd0=#a2a9b1
 	brd1=#afa3bf
 	brd2=#c8ccd1
@@ -100,6 +102,7 @@ if thm==light
 	cl1=#77c1f6
 	cl2=#36c
 	cl3=#39d
+	cl4=#74b2e2
 	lnk=#0645ad
 	lnkv=#0b0080
 	lnkev=#636
@@ -139,13 +142,15 @@ else if thm==dark
 	bg23=#888
 	bg24=#151515
 	bg25=#121212
+	bg26=#09121b
 	tx0=#EEE
 	tx1=#CCC
 	tx2=#BABABA
 	tx3=#AAA
-	tx4=#999
+	tx4=#94999d
 	tx5=#888
 	tx6=#B3B3B3
+	tx7=#999
 	brd0=#404453
 	brd1=#44494d
 	brd2=#212e39
@@ -157,6 +162,7 @@ else if thm==dark
 	cl1=#114163
 	cl2=#25a
 	cl3=#136
+	cl4=#123a64
 	lnk=#48F
 	lnkv=#97F
 	lnkev=#97F
@@ -655,6 +661,43 @@ else
 			if th==dark{
 				filter:invert(1);
 			}
+		}
+		& .k-player{
+			background-color:tx0;
+			color:bg00;
+			& .control-bar{
+				color:tx4;
+				background:linear-gradient(to bottom,brd4,bg25);
+				border-color:brd2;
+			}
+			& .time-disp{
+				color:tx4;
+			}
+			& .ui-widget-content{
+				color:tx4;
+				background-color:bg06;
+				background-image:linear-gradient(to top,bg06,bg03);
+				background-size:auto 50%;
+				border-color:bg24;
+				& a{
+					color:tx7;
+				}
+			}
+			if(thm==dark){
+				& .ui-icon,
+				& .ui-slider-range{
+					filter:invert(1);
+				}
+			}
+		}
+		& .ui-state-hover, .ui-widget-content .ui-state-hover,
+		& .ui-widget-header .ui-state-hover,
+		& .ui-state-focus,
+		& .ui-widget-content .ui-state-focus,
+		& .ui-widget-header .ui-state-focus{
+			border-color:cl4;
+			background-color:bg26;
+			background-image:linear-gradient(to top,bg26,bg04);
 		}
 		& th[style*="background:rgb(235\,235\,210)"]{
 			background-color:bg12 !important;/*sadly no other option*/
