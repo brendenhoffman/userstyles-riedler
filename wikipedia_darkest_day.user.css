@@ -122,6 +122,8 @@ if thm==light
 	amber=#f28500
 	yl0=#c0c090
 	yl1=#f8eaba
+	yl2=#e8dbae
+	yl3=#FC3
 	ovc=#000
 else if thm==dark
 	bg00=#000
@@ -129,7 +131,7 @@ else if thm==dark
 	bg02=#111
 	bg03=#0a0c0e
 	bg04=#0a050f
-	bg05=#141414
+	bg05=#0c0c0c
 	bg06=#08090a
 	bg07=#191919
 	bg08=#181818
@@ -190,13 +192,15 @@ else if thm==dark
 	amber=#b36300
 	yl0=#505030
 	yl1=#352a0a
+	yl2=#433218
+	yl3=#880
 	ovc=#555
 if il
 	il=invert(1)
 else
 	il=none
 @-moz-document domain("wikipedia.org"){
-	.mediawiki{
+	body.mediawiki{
 		.mw-wiki-logo{
 			filter:il;
 			background-image:logo;
@@ -494,6 +498,13 @@ else
 					background-color:yesg;
 				}
 			}
+			& .module-shortcutboxplain{
+				border-color:bg21;
+				background-color:bg00;
+			}
+			& .module-shortcutlist{
+				border-color:bg21;
+			}
 			/*german wiki*/
 			& .hauptseite-{
 				&box-title{
@@ -507,6 +518,24 @@ else
 				&preview-wikidata{
 					background-color:bg00;
 				}
+			}
+		}
+		&.ns-talk .mw-parser-output .mp-toolbox{
+			&,
+			&-daily{
+				border-color:yl0;
+				background-color:yl1;
+			}
+			&-daily td,
+			&-daily th{
+				border-color:yl0;
+			}
+			&-daily th,
+			&-tfl-not{
+				background-color:yl2;
+			}
+			&-following>div{
+				border-color:yl0;
 			}
 		}
 		& .client-js .sortable:not(.jquery-tablesorter)>*>tr:first-child>th:not(.unsortable),
@@ -586,6 +615,15 @@ else
 				&-notice{
 					border-color:yl0;
 				}
+				&-style{
+					border-color:yl3;
+				}
+			}
+			&.ombox{
+				background-color:bg06;
+			}
+			&.ombox-notice{
+				border-color:brd0;
 			}
 		}
 		/*german wikipedia*/
@@ -779,6 +817,9 @@ else
 		}
 		& [style*="background-color: #adf"]{
 			background-color:cl6 !important;
+		}
+		& [style*="background-color: #f9f9f9"]{
+			background-color:bg05 !important;
 		}
 		& ul{
 			list-style-image:none;
