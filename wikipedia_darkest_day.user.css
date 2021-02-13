@@ -63,6 +63,7 @@ if thm==light
 	cl5=#AAF
 	cl6=#ADF
 	cl7=#447ff5
+	cl8=#A3D3FF
 	rd0=#fef6e7
 	rd1=#f2cedd
 	rd2=#fff5fa
@@ -84,6 +85,7 @@ if thm==light
 	yl1=#f8eaba
 	yl2=#e8dbae
 	yl3=#FC3
+	yl4=#FFE49C
 	ovc=#000
 else if thm==dark
 	bg00=#000
@@ -99,7 +101,7 @@ else if thm==dark
 	bg10=#182228
 	bg11=#1d1d1d
 	bg12=#252512
-	bg13=#0a0b12
+	bg13=#0e0f16
 	bg14=#181822
 	bg15=#12161e
 	bg16=#243
@@ -138,6 +140,7 @@ else if thm==dark
 	cl5=#114
 	cl6=#134
 	cl7=#1c4488
+	cl8=#0a2a44
 	rd0=#181107
 	rd1=#280818
 	rd2=#11080c
@@ -159,6 +162,7 @@ else if thm==dark
 	yl1=#352a0a
 	yl2=#433218
 	yl3=#880
+	yl4=#431
 	ovc=#555
 if il
 	il=invert(1)
@@ -678,6 +682,19 @@ else
 			border-color:brd0;
 			& li{
 				border-color:brd0;
+			}
+		}
+		& .diff-{
+			&context{
+				background-color:bg06;
+				border-color:bg13;
+				color:tx1;
+			}
+			&addedline{
+				border-color:cl8;
+			}
+			&deletedline{
+				border-color:yl4;
 			}
 		}
 		& .wb-langlinks-link>a{/*I hate wikipedia for !important this*/
