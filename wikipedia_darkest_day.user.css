@@ -212,50 +212,52 @@ else
 @-moz-document domain("wikipedia.org"){
 	body.mediawiki{
 /*miscellanious stuff, sorted stuff is farther below*/
-		.mw-wiki-logo{
-			filter:il;
-			background-image:logo;
-		}
 		background-color:bg08;
 		color:tx0;
 		& :focus{
 			outline-color:cl2;
 		}
+		.mw-wiki-logo{
+			filter:il;
+			background-image:logo;
+		}
 		& #mw-page-base{
 			background-color:bg00;
 			background-image:linear-gradient(to bottom,bg00 50%,bg08 100%)
 		}
-		& .vector-menu-tabs{
-			&,
-			& a,
-			#mw-head .vector-menu-dropdown h3{
-				background-image:linear-gradient(to bottom,rgba(cl0,0) 0,cl0 100%);
-			}
-			& .selected{
-				background-color:bg00;
-				background-image:none;
+		& .vector-menu-{
+			&-tabs{
+				&,
 				& a,
-				& a:visited{
-					color:tx1;
+				#mw-head .vector-menu-dropdown h3{
+					background-image:linear-gradient(to bottom,rgba(cl0,0) 0,cl0 100%);
+				}
+				& .selected{
+					background-color:bg00;
+					background-image:none;
+					& a,
+					& a:visited{
+						color:tx1;
+					}
+				}
+				& li{
+					background-image:linear-gradient(to top,cl1 0,bg10 1px,bg00 100%);
+					& a{
+						color:lnk;
+					}
 				}
 			}
-			& li{
-				background-image:linear-gradient(to top,cl1 0,bg10 1px,bg00 100%);
-				& a{
+			&-portal{
+				& h3{
+					color:tx4;
+					background-image:linear-gradient(to right,rgba(brd2,0) 0,brd2 33%,brd2 66%,rgba(brd2,0) 100%);
+				}
+				& .body li a,
+				& .vector-menu-content li a{
 					color:lnk;
-				}
-			}
-		}
-		& .vector-menu-portal{
-			& h3{
-				color:tx4;
-				background-image:linear-gradient(to right,rgba(brd2,0) 0,brd2 33%,brd2 66%,rgba(brd2,0) 100%);
-			}
-			& .body li a,
-			& .vector-menu-content li a{
-				color:lnk;
-				&:visited{
-					color:lnkv;
+					&:visited{
+						color:lnkv;
+					}
 				}
 			}
 		}
@@ -654,12 +656,12 @@ else
 			border-color:brd0;
 		}
 		/*normal wiki again*/
-		& .navbox,
-		& .navbox-subgroup{
-			background-color:bg01;
-		}
 		& .navbox{
 			border-color:brd0;
+			&,
+			&-subgroup{
+				background-color:bg01;
+			}
 			& th,
 			&-title{
 				background-color:bg18;
@@ -870,26 +872,30 @@ else
 			border-color:brd2;
 		}
 /*manually styled shit that I gotta !important away*/
-		& th[style*="background:rgb(235\,235\,210)"]{
-			background-color:bg12 !important;/*sadly no other option*/
-		}
-		& th[style*="background:#efefef"]{
-			background-color:bg11 !important;
-		}
-		& th[style*="background-color: rgb(180\,250\,180)"]{
-			background-color:yes !important;
+		& th{
+			&[style*="background:rgb(235\,235\,210)"]{
+				background-color:bg12 !important;/*sadly no other option*/
+			}
+			&[style*="background:#efefef"]{
+				background-color:bg11 !important;
+			}
+			&[style*="background-color: rgb(180\,250\,180)"]{
+				background-color:yes !important;
+			}
 		}
 		& td[style*="border-top:#ddd 1px solid"]{
 			border-top-color:bg3;
 		}
-		& table[style="background-color:#f9f9f9;border:1px solid #aaa;color:#000"]{/*fuck this shit*/
-			background-color:bg05 !important;/*stop using inline style ffs*/
-			border-color:bg21 !important;
-			color:tx0 !important;
-		}
-		& table[style*="background:#F8F9FA"][style*="border:1px solid #AAAAFF"]{
-			background-color:bg06 !important;
-			border-color:cl5 !important;
+		& table{
+			&[style="background-color:#f9f9f9;border:1px solid #aaa;color:#000"]{/*fuck this shit*/
+				background-color:bg05 !important;/*stop using inline style ffs*/
+				border-color:bg21 !important;
+				color:tx0 !important;
+			}
+			&[style*="background:#F8F9FA"][style*="border:1px solid #AAAAFF"]{
+				background-color:bg06 !important;
+				border-color:cl5 !important;
+			}
 		}
 		& [style*="background-color:#ffffff"][style*="border:1px solid #4F4F4F"]{
 			background-color:bg00 !important;/*argh*/
