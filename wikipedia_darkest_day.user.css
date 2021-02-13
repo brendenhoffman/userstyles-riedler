@@ -83,6 +83,7 @@ if thm==light
 	bg24=#CCC
 	bg25=#f0f0f0
 	bg26=#e4f1fb
+	bg27=#c0c0c0
 	tx0=#000
 	tx1=#202122
 	tx2=#222
@@ -106,12 +107,14 @@ if thm==light
 	cl4=#74b2e2
 	cl5=#AAF
 	cl6=#ADF
+	cl7=#447ff5
 	rd0=#fef6e7
 	rd1=#f2cedd
 	rd2=#fff5fa
 	rd3=#bfa3af
 	rd4=#ffdbdb
 	rd5=#bb7070
+	rd6=#ff4242
 	lnk=#0645ad
 	lnkv=#0b0080
 	lnkev=#636
@@ -155,6 +158,7 @@ else if thm==dark
 	bg24=#151515
 	bg25=#121212
 	bg26=#09121b
+	bg27=#232323
 	tx0=#EEE
 	tx1=#CCC
 	tx2=#BABABA
@@ -178,12 +182,14 @@ else if thm==dark
 	cl4=#123a64
 	cl5=#114
 	cl6=#134
+	cl7=#1c4488
 	rd0=#181107
 	rd1=#280818
 	rd2=#11080c
 	rd3=#3f232f
 	rd4=#200
 	rd5=#773030
+	rd6=#D33
 	lnk=#48F
 	lnkv=#97F
 	lnkev=#97F
@@ -205,6 +211,7 @@ else
 	il=none
 @-moz-document domain("wikipedia.org"){
 	body.mediawiki{
+/*miscellanious stuff, sorted stuff is farther below*/
 		.mw-wiki-logo{
 			filter:il;
 			background-image:logo;
@@ -407,7 +414,7 @@ else
 				color:lnkv;
 			}
 		}
-		& .mw-parser-output{
+		& .mw-parser-output{/*mediawiki parser… I just hope the internal styles are consistent.*/
 			& .sidebar{
 				background-color:bg06;
 				border-color:bg21;}
@@ -733,6 +740,8 @@ else
 				filter:invert(1);
 			}
 		}
+/*big self-contained widgets*/
+		/*media player*/
 		& .k-player{
 			background-color:tx0;
 			color:bg00;
@@ -762,14 +771,105 @@ else
 			}
 		}
 		& .ui-state-hover, .ui-widget-content .ui-state-hover,
-		& .ui-widget-header .ui-state-hover,
-		& .ui-state-focus,
-		& .ui-widget-content .ui-state-focus,
-		& .ui-widget-header .ui-state-focus{
+		& .ui-widget-header .ui-state-hover,/*some ui widgets used by .k-player.*/
+		& .ui-state-focus,/*They're used without the .k-player in the original stylesheet*/
+		& .ui-widget-content .ui-state-focus,/*so I'm not sure that the're exclusive to .k-player*/
+		& .ui-widget-header .ui-state-focus{/*but I haven't seen them used anywhere else so idc*/
 			border-color:cl4;
 			background-color:bg26;
 			background-image:linear-gradient(to top,bg26,bg04);
 		}
+		/*the wiki editor (including some page-specific additions)*/
+		& .wikiEditor-ui{
+			& .wikiEditor-ui-view{
+				border-color:brd2;
+			}
+			& .wikiEditor-ui-top{
+				border-bottom-color:brd2;
+			}
+			& .wikiEditor-ui-toolbar{
+				background-color:bg06;
+				box-shadow:0 2px 1px 0 rgba(tx0,0.1);
+				& .group{
+					border-color:bg13;
+				}
+				& .tabs span.tab a{
+					color:lnk;
+					&::before{
+						filter:invert(0.8);
+					}
+				}
+			}
+		}
+		/*OOjs UI stuff - mostly used by such things as the editor afaik*/
+		& .oo-ui{
+			&-buttonElement{
+				&-frameless.oo-ui-widget-enabled{
+					&>.oo-ui-buttonElement-button{
+						color:tx1;
+					}
+					&.oo-ui-flaggedElement-destructive>.oo-ui-buttonElement-button:hover{
+						color:rd6;
+					}
+				}
+				&-framed.oo-ui-widget-enabled{
+					&>.oo-ui-buttonElement-button{
+						background-color:bg06;
+						color:tx1;
+						border-color:brd0;
+						&:hover{
+							background-color:bg00;
+							color:tx3;
+							border-color:brd0;
+						}
+					}
+					&.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive>.oo-ui-buttonElement-button{
+						color:bg00;
+						background-color:cl2;
+						border-color:cl2;
+						&:hover{
+							background-color:cl7;
+							border-color:cl7;
+						}
+					}
+				}
+				if(thm==dark){
+					&-button .oo-ui-iconElement-icon{
+						filter:invert(0.85);
+					}
+
+				}
+			}
+			&-textInputWidget{
+				&.oo-ui-widget-enabled{
+					& .oo-ui-inputWidget-input:focus{
+						border-color:cl2;
+						box-shadow:inset 0 0 0 1px cl2;
+					}
+					&:hover .oo-ui-inputWidget-input:not(:focus){
+						border-color:tx5;
+					}
+				}
+				& .oo-ui-inputWidget-input{
+					background-color:bg00;
+					color:tx0;
+					border-color:brd0;
+				}
+			}
+		}
+		& div#editpage-specialchars{
+			border-color:bg27;
+			& a{
+				background-color:bg05;
+				border-color:brd4;
+			}
+		}
+		& .editOptions{
+			background-color:bg13;
+			color:tx1;
+			border-color:brd2;
+		}
+/*manually styled shit that I gotta !important away*/
 		& th[style*="background:rgb(235\,235\,210)"]{
 			background-color:bg12 !important;/*sadly no other option*/
 		}
@@ -833,9 +933,11 @@ else
 		& [style*="color:#FF9933"]{
 			color:orng !important;
 		}
+/*image replacements & filters per-url*/
 		& img[src="//upload.wikimedia.org/wikipedia/en/thumb/d/de/AnonEditWarning.svg/9px-AnonEditWarning.svg.png"]{
 			filter:invert(0.85)
 		}
+/*some base elements with default styles I don't like*/
 		& ul{
 			list-style-image:none;
 			& li::marker{
@@ -853,6 +955,10 @@ else
 		& h1,
 		& h2{
 			border-bottom-color:brd0;
+		}
+		& textarea{
+			background-color:bg00;
+			color:tx0;
 		}
 	}
 }
