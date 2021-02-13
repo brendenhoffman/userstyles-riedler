@@ -186,7 +186,7 @@ else
 			background-image:linear-gradient(to bottom,bg00 50%,bg08 100%)
 		}
 		& .vector-menu-{
-			&-tabs{
+			&tabs{
 				&,
 				& a,
 				#mw-head .vector-menu-dropdown h3{
@@ -207,7 +207,7 @@ else
 					}
 				}
 			}
-			&-portal{
+			&portal{
 				& h3{
 					color:tx4;
 					background-image:linear-gradient(to right,rgba(brd2,0) 0,brd2 33%,brd2 66%,rgba(brd2,0) 100%);
