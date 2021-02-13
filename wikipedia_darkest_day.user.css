@@ -5,54 +5,9 @@
 @description	Dark mode for Wikipedia
 @author			Riedler
 @preprocessor	stylus
-@var	select	thm		"Theme"				{"Dark":"dark","Custom":"custom","Light":"light"}
+@var	select	thm		"Theme"				{"Dark":"dark","Light":"light"}
 @var	checkbox	il	"Invert Logo"		1
 @var	text	logo	"Logo"				"url(/static/images/project-logos/enwiki20a.png)"
-@var	color	bg00	"Background 0"		#000
-@var	color	bg01	"Background 1"		#0e0e0e
-@var	color	bg02	"Background 2"		#111
-@var	color	bg03	"Background 3"		#0a0c0e
-@var	color	bg04	"Background 4"		#0a050f
-@var	color	bg05	"Background 5"		#141414
-@var	color	bg06	"Background 6"		#08090a
-@var	color	bg07	"Background 7"		#191919
-@var	color	bg08	"Background 8"		#181818
-@var	color	bg09	"Background 9"		#050a11
-@var	color	bg10	"Background 10"		#182228
-@var	color	bg11	"Background 11"		#1d1d1d
-@var	color	bg12	"Background 12"		#252512
-@var	color	bg13	"Background 13"		#0a0b12
-@var	color	bg14	"Background 14"		#181822
-@var	color	bg15	"Background 15"		#12161e
-@var	color	bg16	"Background 16"		#243
-@var	color	bg17	"Background 17"		#203040
-@var	color	bg18	"Background 18"		#112
-@var	color	bg19	"Background 19"		#465
-@var	color	bg20	"Background 20"		#456
-@var	color	bg21	"Background 21"		#555
-@var	color	tx0		"Text 0"			#EEE
-@var	color	tx1		"Text 1"			#CCC
-@var	color	tx2		"Text 2"			#BABABA
-@var	color	tx3		"Text 3"			#AAA
-@var	color	tx4		"Text 4"			#999
-@var	color	tx5		"Text 5"			#888
-@var	color	brd0	"Border 0"			#405344
-@var	color	brd1	"Border 1"			#44494d
-@var	color	brd2	"Border 2"			#212e39
-@var	color	brd3	"Border 3"			#665782
-@var	color	brd4	"Border 4"			#666
-@var	color	brd5	"Border 5"			#222
-@var	color	cl0		"Color 0"			#345
-@var	color	cl1		"Color 1"			#114163
-@var	color	cl2		"Color 2"			#25a
-@var	color	lnk		"Link"				#26C
-@var	color	lnkv	"Visited Link"		#66C
-@var	color	lnkev	"Ext. Visited Link"	#86C
-@var	color	lnka	"Active Link"		#FC2
-@var	color	lnkea	"Ext. Active Link"	#F90
-@var	color	yes		"True/Yes/Correct"	#484
-@var	color	amber	"Amber Color"		#b36300
-@var	color	ovc		"Generic Overlay"	#555
 ==/UserStyle== */
 
 if thm==light
