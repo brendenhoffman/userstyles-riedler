@@ -5,9 +5,10 @@
 @description	Dark mode for Wikipedia
 @author			Riedler
 @preprocessor	stylus
-@var	select	thm		"Theme"				{"Dark":"dark","Light":"light"}
-@var	checkbox	il	"Invert Logo"		1
-@var	text	logo	"Logo"				"url(/static/images/project-logos/enwiki20a.png)"
+@var	select		thm		"Theme"					{"Dark":"dark","Light":"light"}
+@var	checkbox	il		"Invert Logo"			1
+@var	text		logo	"Logo"					"url(/static/images/project-logos/enwiki20a.png)"
+@var	checkbox	sdi		"Style default Inputs"	1
 ==/UserStyle== */
 
 if thm==light
@@ -937,6 +938,20 @@ else
 		& textarea{
 			background-color:bg00;
 			color:tx0;
+		}
+		if(sdi){
+			select:not([class]){
+				appearance:none;
+				background-color:bg06;
+				color:tx0;
+				border:solid 1px brd0;
+				padding:0.25rem;
+				border-radius:0.25rem;
+				background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+				background-repeat:no-repeat;
+				background-position:center right;
+				background-size:1em 0.75em;
+			}
 		}
 	}
 }
