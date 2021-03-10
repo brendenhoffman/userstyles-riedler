@@ -77,6 +77,8 @@ if thm==light
 	lnkev=#636
 	lnka=#faa700
 	lnkea=#b63
+	lnkn=#ba0000
+	lnknv=#a55858
 	yes=#99FF99
 	yesg=#9bcd9b
 	yesd=#090
@@ -154,6 +156,8 @@ else if thm==dark
 	lnkev=#97F
 	lnka=#FC2
 	lnkea=#F90
+	lnkn=#E33
+	lnknv=#C36
 	yes=#484
 	yesg=#686
 	yesd=#080
@@ -374,6 +378,18 @@ else
 			}
 			&:visited{
 				color:lnkv;
+			}
+			&.new{
+				color:lnkn;
+				&:visited{
+					color:lnknv;
+				}
+			}
+		}
+		& #p-personal a.new{
+			color:lnkn;
+			&:visited{
+				color:lnknv;
 			}
 		}
 		& .mw-parser-output{/*mediawiki parser… I just hope the internal styles are consistent.*/
